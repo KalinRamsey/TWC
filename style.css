@@ -68,7 +68,7 @@ LOADING SCREEN
   width: 100vw;
   height: 100vh;
   background: var(--primary1);
-  background-image: url('/Assets/BGSmudges.png');
+  background-image: url('./Assets/BGSmudges.png');
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -94,7 +94,7 @@ LOADING SCREEN
   position: absolute;
   top: calc(50% - 125px);
   left: calc(50% - 125px);
-  content: url("Assets/circle_brush.svg");
+  content: url("./Assets/circle_brush.svg");
   filter: hue-rotate(140deg) brightness(500%) saturate(120%);
   animation-name: spin;
   animation-duration: 5000ms;
