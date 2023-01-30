@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TWC - Trans Women Connected - Orgs</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="./orgsStyles.css">
+</head>
+<body>
+  <div id="sideBar">
+    <div id="sideBarBG"></div>
+    <div id="sideBarContent">
+      <div id="sideBarNavLogo">
+        <p>Trans <span class="orgsThemeText">Women</span><br><span id="logoLarge">Connected</span></p>
+      </div>
+      <ul id="sideBarOptions">
+        <li>
+          <a href="./users.html">
+            <button class="sideBarButton">
+              Users
+            </button>
+          </a>
+        </li>
+        <li>
+          <a href="./orgs.html">
+            <button class="sideBarButton">
+              Orgs
+            </button>
+          </a>
+        </li>
+        <li>
+          <a href="./map.html">
+            <button class="sideBarButton">
+              Map
+            </button>
+          </a>
+        </li>
+      </ul>
+      <div id="sideBarSpacer"></div>
+      <div id="sideBarFooter">
+        <h3 class="orgsThemeText">Connect</h3>
+        <p>Download the app and find your community today!</p>
+
+        <div id="sideBarFooterAppIcons">
+          <a href="#">
+            <img src="../Assets/appstore_icon.png" alt="App Store Icon" />
+          </a>
+          <a href="#">
+            <img src="../Assets/googleplay_icon.png" alt="Google Play Icon" />
+          </a>
+        </div>
+      </div>
+    </div>
+    <div id="sideBarRight">
+      <div id="sideBarRightWave">
+        <img src="../Assets/wave.svg" alt="side bar right wave">
+      </div>
+      <div id="sideBarRightWaveBrush">
+        <img src="../Assets/wave_brush.svg" alt="side bar right wave brush">
+      </div>
+      <div id="sideBarRightWaveColor">
+        <img src="../Assets/wave_highlight_blue.svg" alt="side bar right color">
+      </div>
+    </div>
+  </div>
+
+  <div id="mainMenuModal" class="hidden">
+    <div id="mainMenu">
+      <h3>Main Menu</h3>
+      
+      <ul id="mainMenuOptions">
+        <li>
+          <a href="./users.html">
+            <button class="menuButton">
+              Users
+            </button>
+          </a>
+        </li>
+        <li>
+          <a href="./orgs.html">
+            <button class="menuButton">
+              Orgs
+            </button>
+          </a>
+        </li>
+        <li>
+          <a href="./map.html">
+            <button class="menuButton">
+              Map
+            </button>
+          </a>
+        </li>
+      </ul>
+      <div id="menuAppIcons">
+        <img src="../Assets/appstore_icon.png" alt="App Store Icon" />
+          <img src="../Assets/googleplay_icon.png" alt="Google Play Icon" />
+      </div>
+    </div>
+  </div>
+  
+  <nav id="navBar">
+    <div id="navBG"></div>
+    <div id="navData">
+      <div id="navLogo">
+        <p>Trans <span class="orgsThemeText">Women</span><br><span id="logoLarge">Connected</span></p>
+      </div>
+      <div id="navSpacer"></div>
+      <div id="hamburgerMenu">
+        <div id="mid"></div>
+        <div id="top"></div>
+        <div id="low"></div>
+      </div>
+    </div>
+    <div id="headerBottom">
+      <div id="headerBottomWave">
+        <img src="../Assets/wave.svg" alt="header bottom wave">
+      </div>
+      <div id="headerBottomWaveBrush">
+        <img src="../Assets/wave_brush.svg" alt="header bottom wave brush">
+      </div>
+      <div id="headerBottomWaveColor">
+        <img src="../Assets/wave_highlight_blue.svg" alt="header bottom color">
+      </div>
+    </div>
+  </nav>
+  
+
+  <main id="orgsView" class="orgsThemeBG">
+    <header id="carousel">
+      <div id="imageSelector">
+        <div id="selectPrev"></div>
+        <img id="featureImg" src="https://via.placeholder.com/1920x1080" alt="featureImg" />
+        <div id="selectNext"></div>
+      </div>
+      <div id="featureSelector">
+        <ul id="selectionIndicators">
+          <!-- featured images rendered dynamically via script.js -->
+        </ul>
+      </div>
+    </header>
+
+    <section id="researchSection">
+      <h3>R & D</h3>
+      <div id="researchFindings">
+
+      </div>
+    </section>
+
+    <section id="howToSection">
+      <h3>How to Use the App...</h3>
+      <div id="howToInfo">
+        <ul id="howToSteps">
+          <li id="howTo1">
+            <div class="stepNumber">
+              <h3>1</h3>
+            </div>
+            <p>Instructions to use the app with different existing groups</p>
+          </li>
+          <li id="howTo2">
+            <div class="stepNumber">
+              <h3>2</h3>
+            </div>
+            <p>Instructions to use the app with different existing groups</p>
+          </li>
+          <li id="howTo3">
+            <div class="stepNumber">
+              <h3>3</h3>
+            </div>
+            <p>Instructions to use the app with different existing groups</p>
+          </li>
+        </ul>
+        <div id="howToGraphic">
+          <div id="howToImg"></div>
+          <img id="howToFrame" src="../Assets/PhoneGraphic.svg" alt="How to image">
+        </div>
+      </div>
+    </section>
+
+    <section id="contactSection">
+      <h3>Contact Us for More!</h3>
+      <form id="contactForm" action="">
+        <div id="senderInfo">
+          <div id="fullName">
+            <div id="firstName">
+              <label for="firstNameField">First Name*</label>
+              <input id="firstNameField" name="firstNameField" type="text" placeholder="First Name*" required>
+            </div>
+            
+            <div id="lastName">
+              <label for="lastNameField">Last Name*</label>
+              <input id="lastNameField" name="lastNameField" type="text" placeholder="Last Name*" required>
+            </div>
+          </div>
+  
+          <div id="contactInfo">
+            <div id="email">
+              <label for="emailField">Email*</label>
+              <input id="emailField" name="emailField" type="text" placeholder="Email*" required>
+            </div>
+            
+            <div id="phoneNumber">
+              <label for="phoneNumberField">Phone Number</label>
+              <input id="phoneNumberField" name="phoneNumberField" type="tel" placeholder="Phone Number">
+            </div>
+          </div>
+        </div>
+        
+        <div id="senderMessage">
+          <div id="subject">
+            <label for="subjectField">Subject</label>
+            <input id="subjectField" name="subjectLine" type="text" placeholder="Subject*" required>
+          </div>
+          <div id="message">
+            <label for="messageField">Message</label>
+            <textarea id="messageField" name="messageField" type="text" placeholder="Message*" required></textarea>
+          </div>
+          
+        </div>
+        <div id="formButtons">
+          <input id="submitBtn" class="button" type="submit">
+          <input id="resetBtn" class="button" type="reset">
+        </div>
+      </form>
+      
+    </section>
+  </main>
+
+  <footer id="footer">
+    <div id="footerTop">
+      <div id="footerTopWave">
+        <img src="../Assets/wave.svg" alt="footer top wave">
+      </div>
+      <div id="footerTopWaveBrush">
+        <img src="../Assets/wave_brush.svg" alt="footer top wave brush">
+      </div>
+      <div id="footerTopWaveColor">
+        <img src="../Assets/wave_highlight_blue.svg" alt="footer top color">
+      </div>
+    </div>
+    <div id="footerData">
+      
+      <h3 class="orgsThemeText">Connect</h3>
+      <p>Download the app and find your community today!</p>
+
+      <div id="footerAppIcons">
+        <img src="../Assets/appstore_icon.png" alt="App Store Icon" />
+        <img src="../Assets/googleplay_icon.png" alt="Google Play Icon" />
+      </div>  
+    </div>
+    <div id="footerBG"></div>
+  </footer>
+  
+  <script src="../script.js" type="module"></script>
+</body>
+</html>

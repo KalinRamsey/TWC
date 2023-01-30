@@ -1,0 +1,615 @@
+:root {
+  --primary1: #2E2D7B;
+  --primary2: #BC1F74;
+  --accent1: #C42182;
+  --accent2: #FAA21B;
+  --accent3: #0ABCBF;
+  --accent4: #87C540;
+  --accent5: #2A8993;
+  --accent6: #4BC3F1;
+  --accent7: #A184BD;
+  --accent8: #FCC842;
+  --white: #ffffff;
+  --black: #000000;
+  --blackFade: #00000040;
+
+  --padding: 20px;
+  --radius: 7px;
+  --margin: 20px;
+}
+
+* {
+  margin: 0 auto;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  min-height: 1vh;
+}
+
+@media only screen and (min-width: 768px) {
+  body {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+h3 {
+  color: var(--accent8);
+  text-transform: uppercase;
+  font-size: 2em;
+}
+
+p {
+  color: var(--white);
+}
+
+img {
+  display: block;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+/*
+|||||||||||||||||||||||||||
+LOADING SCREEN
+|||||||||||||||||||||||||||
+*/
+#loadingScreen {
+  width: 100vw;
+  height: 100vh;
+  background: var(--primary1);
+  background-image: url('/Assets/BGSmudges.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  padding: 50px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#loadingTitle {
+  transform: rotate(-10deg);
+  padding: 50px 0;
+  color: var(--white);
+  text-transform: uppercase;
+}
+
+.themeColorText {
+  color: var(--primary2);
+}
+
+#loadingCircle {
+  width: 250px;
+  position: absolute;
+  top: calc(50% - 125px);
+  left: calc(50% - 125px);
+  content: url("Assets/circle_brush.svg");
+  filter: hue-rotate(140deg) brightness(500%) saturate(120%);
+  animation-name: spin;
+  animation-duration: 5000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+#loadingQuote {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  bottom: 0;
+  height: 150px;
+  background-image: url('./Assets/brush_stroke_red.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@keyframes spin {
+  from {
+      transform:rotate(0deg);
+  }
+  to {
+      transform:rotate(360deg);
+  }
+}
+/*
+|||||||||||||||||||||||||||
+SIDEBAR NAV
+|||||||||||||||||||||||||||
+*/
+#sideBar {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  #sideBar {
+    display: inline-block;
+    vertical-align: top;
+    top: 0;
+    height: 100vh;
+    width: 250px;
+    position: sticky;
+    z-index: 99;
+  }
+
+  #sideBarBG {
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: var(--primary1);
+  }
+  
+  #sideBarContent {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 50px 20px;
+    z-index: 5;
+  }
+
+  #sideBarSpacer {
+    flex: 1;
+  }
+
+  #sideBarNavLogo {
+    transform: rotate(-10deg);
+    padding: 50px 0;
+  }
+  #sideBarNavLogo p {
+    font-size: 1.5em;
+    text-transform: uppercase;
+  }
+  
+  #sideBarOptions {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    width: 100%;
+  }
+
+  #sideBarOptions li {
+    width: 100%;
+  }
+
+  .sideBarButton {
+    width: 100%;
+    max-width: 200px;
+    height: 50px;
+    margin: calc(var(--padding)/2) auto;
+    border-radius: 10px;
+    border: none;
+    background: var(--primary2);
+    color: var(--white);
+  }
+  .sideBarButton:hover {
+    cursor: pointer;
+    background: var(--accent1)
+  }
+  
+  #sideBarRight {
+    z-index: -1;
+    position: absolute;
+    width: 100vh;
+    height: 10%;
+    left: -150px;
+    bottom: 45%;
+    transform: rotate(90deg) rotateY(180deg);
+  }
+
+  @media only screen and (min-width: 1024px) {
+    #sideBarRight {
+      left: -150px;
+    }
+  }
+  
+  #sideBarRightWaveColor, #sideBarRightWave, #sideBarRightWaveBrush {
+    position: absolute;
+    display: inline-block;
+    left: 0;
+    width: 100%;
+  }
+  
+  #sideBarRightWaveColor {
+    top: -5px;
+  }
+  
+  #sideBarRightWaveBrush {
+    top: -10px;
+  }
+  
+  #sideBarRightWaveColor img,
+  #sideBarRightWave img,
+  #sideBarRightWaveBrush img {
+    width: 100%;
+  }
+
+  #sideBarFooterAppIcons {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+  }
+
+  #sideBarFooterAppIcons img:hover{
+    cursor: pointer;
+  }
+}
+
+/*
+|||||||||||||||||||||||||||
+NAV BAR
+|||||||||||||||||||||||||||
+*/
+
+#navBar {
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  margin-bottom: -15px;
+}
+#navBG {
+  background: var(--primary1);
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  top: 0;
+  z-index:-1;
+  left: 0px;
+}
+#navData {
+  padding: var(--padding);
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  align-items: center;
+  z-index: 9;  
+}
+
+#navSpacer {
+  flex: 1;
+}
+
+#headerBottom {
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  bottom: -30px;
+  transform: rotate(180deg);
+}
+
+#headerBottomWaveColor, #headerBottomWave, #headerBottomWaveBrush {
+  position: absolute;
+  display: inline-block;
+  left: 0;
+}
+
+#headerBottomWaveColor {
+  top: -5px;
+}
+
+#headerBottomWaveBrush {
+  top: -10px;
+}
+
+#headerBottomWaveColor img,
+#headerBottomWave img,
+#headerBottomWaveBrush img {
+  width: 100vw;
+}
+
+@media only screen and (min-width: 768px) {
+  #navBar {
+    display: none;
+  }
+}
+/* 
+-------------
+NAV LOGO
+-------------
+*/
+#navLogo {
+  transform: rotate(-10deg);
+}
+#navLogo p {
+  text-transform: uppercase;
+}
+#logoLarge {
+  font-size: 1.25em;
+}
+
+/* 
+-------------
+HAMBURGER MENU
+-------------
+*/
+#hamburgerMenu {
+  position: relative;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 30px;
+  width: 40px;
+  z-index: 5;
+}
+
+#hamburgerMenu:hover, #closeMenu:hover {
+  cursor: pointer;
+}
+#hamburgerMenu:hover #top,
+#hamburgerMenu:hover #mid,
+#hamburgerMenu:hover #low {
+  background: var(--accent8);
+}
+
+
+#hamburgerMenu #top,
+#hamburgerMenu #mid,
+#hamburgerMenu #low {
+  width: 100%;
+  height: 5px;
+  position: absolute;
+  background: var(--white);
+  border-radius: 10px;
+}
+#hamburgerMenu #mid {
+  top: calc(50% - 2.5px);
+}
+#hamburgerMenu #low {
+  bottom: 0;
+}
+
+#closeMenu {
+  position: relative;
+  height: 30px;
+  width: 40px;
+}
+#closeMenu:before, #closeMenu:after {
+  position: absolute;
+  left: 16px;
+  top: -5px;
+  content: ' ';
+  height: 40px;
+  border-radius: 10px;
+  width: 5px;
+  background-color: #fff;
+}
+#closeMenu:before {
+  transform: rotate(45deg);
+}
+#closeMenu:after {
+  transform: rotate(-45deg);
+}
+
+/*
+|||||||||||||||||||||||||||
+MAIN MENU 
+|||||||||||||||||||||||||||
+*/
+#mainMenuModal {
+  z-index: 5;
+  background: var(--blackFade);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+#mainMenu {
+  z-index: 10;
+  background: var(--accent4);
+  padding: var(--padding);
+  width: calc(100% - calc(var(--padding) * 2));
+  max-width: 350px;
+  position: sticky;
+  top: calc(50% - 35vh);
+  left: calc(50% - calc((100% - calc(var(--padding) * 2)) / 2));
+  border-radius: 20px;
+}
+
+#mainMenu h3 {
+  color: var(--primary1);
+}
+#mainMenuSpacer {
+  flex: 1;
+}
+
+#mainMenuOptions {
+  padding: var(--padding) 0;
+}
+
+#mainMenuOptions button {
+  width: 100%;
+  max-width: 200px;
+  height: 50px;
+  margin: calc(var(--padding)/2) auto;
+  border-radius: 10px;
+  border: none;
+  background: var(--primary1);
+  color: var(--white);
+}
+
+#mainMenuOptions button:hover {
+  cursor: pointer;
+  background: var(--accent7);
+}
+
+#menuAppIcons {
+  display: flex;
+  flex-direction: column;
+  padding-top: var(--padding);
+}
+
+#menuAppIcons img {
+  padding: calc(var(--padding)/4) 0;
+  width: 100%;
+  max-width: 200px;
+}
+
+/* 
+-------------
+FEATURE IMAGE SECTION
+-------------
+*/
+
+#imageSelector {
+  position: relative;
+  display: flex;
+  width: 100%;
+  min-height: 200px;
+}
+#selectPrev, #selectNext {
+  position: absolute;
+  height: 100%;
+  width: 10%;
+  background: #00000000;
+}
+#selectPrev:hover, #selectNext:hover {
+  cursor: pointer;
+  display: block;
+  background: var(--blackFade);
+}
+#selectPrev {
+  left: 0px;
+}
+#selectNext {
+  right: 0px;
+}
+#featureImg {
+  width: 100%;
+}
+
+#featureSelector {
+  background: var(--primary1);
+  height: 40px;
+  display: flex;
+  /* padding: 0 var(--padding); */
+}
+
+#selectionIndicators {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+#selectionIndicators li {
+  height: 100%;
+  width: 20px;
+  margin: calc(var(--padding)/2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#selectionIndicators li:hover {
+  cursor: pointer;
+}
+
+.active, .inactive {
+  height: 10px;
+  width: 10px;
+  background: var(--accent7);
+  border-radius: 50px;
+}
+.active {
+  height: 15px;
+  width: 15px;
+  background: var(--accent8)
+}
+#featureSelector li:hover .inactive {
+  background: var(--white);
+  height: 15px;
+  width: 15px;
+}
+
+@media only screen and (min-width: 768px) {
+  #selectPrev, #selectNext {
+    width: 30%;
+  }
+}
+
+/*
+|||||||||||||||||||||||||||
+FOOTER
+|||||||||||||||||||||||||||
+*/
+#footer {
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  margin-bottom: 0px;
+  width: 100%;
+}
+
+#footerTop {
+  position: absolute;
+  width: 100%;
+  z-index: 5;
+  top: -50px;
+}
+
+#footerTopWaveColor, #footerTopWave, #footerTopWaveBrush {
+  position: absolute;
+  display: inline-block;
+  left: 0;
+}
+
+#footerTopWaveColor {
+  top: -5px;
+}
+
+#footerTopWaveBrush {
+  top: -10px;
+}
+
+#footerTopWaveColor img,
+#footerTopWave img,
+#footerTopWaveBrush img {
+  width: 100vw;
+}
+
+#footerData {
+  padding: var(--padding);
+  margin: 0;
+  z-index: 5;
+}
+
+#footerBG {
+  background: var(--primary1);
+  width: 100%;
+  height: 150px;
+  position: absolute;
+  bottom: 0;
+}
+
+#footerAppIcons {
+  display: flex;
+  padding-top: var(--padding);
+  max-width: 350px;
+}
+
+#footerAppIcons img {
+  width: calc(50% - 5px);
+}
+#footerAppIcons img:hover {
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) {
+  #footer {
+    display: none;
+  }
+}

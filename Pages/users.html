@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TWC - Trans Women Connected</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="./userStyles.css">
+</head>
+<body>
+  <div id="sideBar">
+    <div id="sideBarBG"></div>
+    <div id="sideBarContent">
+      <div id="sideBarNavLogo">
+        <p>Trans <span class="usersThemeText">Women</span><br><span id="logoLarge">Connected</span></p>
+      </div>
+      <ul id="sideBarOptions">
+        <li>
+          <a href="./index.html">
+            <button class="sideBarButton">
+              Users
+            </button>
+          </a>
+        </li>
+        <li>
+          <a href="./orgs.html">
+            <button class="sideBarButton">
+              Orgs
+            </button>
+          </a>
+        </li>
+        <li>
+          <a href="./map.html">
+            <button class="sideBarButton">
+              Map
+            </button>
+          </a>
+        </li>
+      </ul>
+      <div id="sideBarSpacer"></div>
+      <div id="sideBarFooter">
+        <h3>Connect</h3>
+        <p>Download the app and find your community today!</p>
+
+        <div id="sideBarFooterAppIcons">
+          <a href="#">
+            <img src="../Assets/appstore_icon.png" alt="App Store Icon" />
+          </a>
+          <a href="#">
+            <img src="../Assets/googleplay_icon.png" alt="Google Play Icon" />
+          </a>
+        </div>
+      </div>
+    </div>
+    <div id="sideBarRight">
+      <div id="sideBarRightWave">
+        <img src="../Assets/wave.svg" alt="side bar right wave">
+      </div>
+      <div id="sideBarRightWaveBrush">
+        <img src="../Assets/wave_brush.svg" alt="side bar right wave brush">
+      </div>
+      <div id="sideBarRightWaveColor">
+        <img src="../Assets/wave_highlight_pink.svg" alt="side bar right color">
+      </div>
+    </div>
+  </div>
+
+  <div id="mainMenuModal" class="hidden">
+    <div id="mainMenu">
+      <h3>Main Menu</h3>
+      
+      <ul id="mainMenuOptions">
+        <li>
+          <a href="./index.html">
+            <button class="menuButton">
+              Users
+            </button>
+          </a>
+        </li>
+        <li>
+          <a href="./orgs.html">
+            <button class="menuButton">
+              Orgs
+            </button>
+          </a>
+        </li>
+        <li>
+          <a href="./map.html">
+            <button class="menuButton">
+              Map
+            </button>
+          </a>
+        </li>
+      </ul>
+      <div id="menuAppIcons">
+        <a href="#">
+          <img src="../Assets/appstore_icon.png" alt="App Store Icon" />
+        </a>
+        <a href="#">
+          <img src="../Assets/googleplay_icon.png" alt="Google Play Icon" />
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <nav id="navBar">
+
+    <div id="navData">
+      <div id="navLogo">
+        <p>Trans <span class="usersThemeText">Women</span><br><span id="logoLarge">Connected</span></p>
+      </div>
+      <div id="navSpacer"></div>
+      
+      <div id="hamburgerMenu">
+        <div id="mid"></div>
+        <div id="top"></div>
+        <div id="low"></div>
+      </div>
+
+      <div id="closeMenu" class="hidden"></div>
+      
+      <div id="navBG"></div>
+    </div>
+    <div id="headerBottom">
+      <div id="headerBottomWave">
+        <img src="../Assets/wave.svg" alt="header bottom wave">
+      </div>
+      <div id="headerBottomWaveBrush">
+        <img src="../Assets/wave_brush.svg" alt="header bottom wave brush">
+      </div>
+      <div id="headerBottomWaveColor">
+        <img src="../Assets/wave_highlight_pink.svg" alt="header bottom color">
+      </div>
+    </div>
+  </nav>
+  
+
+  <main id="usersView" class="usersThemeBG">
+    <header id="carousel">
+      <div id="imageSelector">
+        <div id="selectPrev"></div>
+        <img id="featureImg" src="https://via.placeholder.com/1920x1080" alt="featureImg" />
+        <div id="selectNext"></div>
+      </div>
+      <div id="featureSelector">
+        <ul id="selectionIndicators">
+          <!-- featured images rendered dynamically via script.js -->
+        </ul>
+      </div>
+    </header>
+
+    <section id="infoSection">
+      <ul id="infoList">
+        <!-- featured info rendered dynamically via userScript.js -->
+      </ul>
+    </section>
+
+    <section id="videoSection">
+      <h3>See it in Action!</h3>
+      <div id="videoFeature">
+        <img id="playButton" src="../Assets/PlayButton.svg" alt="Play Button" />
+        <div id="videoCover"></div>
+        <video id="sourceVideo" controls></video>
+      </div>
+      
+      <ul id="videoInfo">
+        <li>
+          <p>
+            After you join the study, you’ll take a survey on your phone, tablet, or computer. Then you download the health-related app that we ask you to use.
+          </p>
+        </li>
+        <li>
+          <p>
+            There are 4 paid surveys to take. The surveys ask about who you are, your relationships and behaviors, and experiences with COVID. For the first survey, you will be paid after you download the app. Then you'll take 3 more surveys at 1, 3, and 6 months after starting the study.
+          </p>
+        </li>
+        <li>
+          <p>
+            During the first month you have the app, you can earn more when you use the app and complete activities. You can get up to $50 more
+          </p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="mapSection">
+      <h3>Find Resources Near You!</h3>
+      <p>Click the map to discover amazing local communities!</p>
+
+      <div id="mapGraphic">
+        <a id="mapImg" href="./Pages/map.html">
+          <img src="../Assets/globe.svg" alt="globe image">
+        </a>
+        
+        <div class="imgHighlight"></div>
+      </div>
+      
+    </section>
+  </main>
+
+  <footer id="footer">
+    <div id="footerTop">
+      <div id="footerTopWave">
+        <img src="../Assets/wave.svg" alt="footer top wave">
+      </div>
+      <div id="footerTopWaveBrush">
+        <img src="../Assets/wave_brush.svg" alt="footer top wave brush">
+      </div>
+      <div id="footerTopWaveColor">
+        <img src="../Assets/wave_highlight_pink.svg" alt="footer top color">
+      </div>
+    </div>
+    <div id="footerData">
+      
+      <h3>Connect</h3>
+      <p>Download the app and find your community today!</p>
+
+      <div id="footerAppIcons">
+        <img src="../Assets/appstore_icon.png" alt="App Store Icon" />
+        <img src="../Assets/googleplay_icon.png" alt="Google Play Icon" />
+      </div>  
+    </div>
+    <div id="footerBG"></div>
+  </footer>
+  
+  <script src="../script.js" type="module"></script>
+  <script src="./userScript.js" type="module"></script>
+</body>
+</html>

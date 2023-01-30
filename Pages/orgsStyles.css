@@ -1,0 +1,296 @@
+/*
+|||||||||||||||||||||||||||
+ORGS VIEW
+|||||||||||||||||||||||||||
+*/
+body {
+  background: var(--accent5);
+}
+
+#orgsView {
+  margin: 0px auto -80px auto;
+}
+#orgsView h3 {
+  color: var(--primary1);
+}
+
+.orgsThemeText {
+  color: var(--accent5);
+}
+.orgsThemeBG {
+  background-image: url('../Assets/BGSmudges.png');
+  background-size:cover;
+}
+
+@media only screen and (min-width: 600px) {
+  #orgsView {
+    margin: -90px auto;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  #orgsView {
+    margin: 0;
+  }
+}
+
+#researchSection, #howToSection, #contactSection {
+  padding: calc(var(--padding) * 2);
+  width: 100%;
+  max-width: 750px;
+  overflow: visible;
+}
+
+@media only screen and (min-width: 768px) {
+  #researchSection, #howToSection, #contactSection {
+    padding-left: 120px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  #researchSection, #howToSection, #contactSection {
+    padding-left: 200px;
+  }
+}
+/* 
+-------------
+RESEARCH SECTION
+-------------
+*/
+#researchFindings {
+  width: 100%;
+  height: 250px;
+  background: var(--accent3);
+  border-radius: var(--radius);
+  margin-top: 50px;
+}
+
+/* 
+-------------
+HOW TO SECTION
+-------------
+*/
+#howToSection {
+  display: flex;
+  flex-direction: column;
+}
+#howToInfo {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  margin-top: 50px;
+}
+#howToSteps {
+  display: flex;
+  flex-direction: column;
+}
+#howToSteps li {
+  display: flex;
+  align-items: center;
+  height: 100px;
+  padding: 0 0 0 var(--padding);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: cover;
+}
+#howToSteps li:nth-child(2) {
+  padding: var(--padding) 0 var(--padding) var(--padding);
+  position: relative;
+}
+#howToSteps .stepNumber {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 1;
+}
+#howToSteps #howTo1 {
+  background-image: url("../Assets/brush_stroke_red.svg");
+  background-size: contain;
+  background-position: left;
+}
+#howToSteps #howTo1 .stepNumber {
+  background-image: url("../Assets/circle_wobbly_red.svg");
+}
+#howToSteps #howTo2 {
+  background-image: url("../Assets/brush_stroke_yellow.svg");
+  background-size: contain;
+  background-position: left;
+}
+#howToSteps #howTo2 .stepNumber {
+  background-image: url("../Assets/circle_wobbly_yellow.svg");
+}
+#howToSteps #howTo3 {
+  background-image: url("../Assets/brush_stroke_green.svg");
+  background-size: contain;
+  background-position: left;
+}
+#howToSteps #howTo3 .stepNumber {
+  background-image: url("../Assets/circle_wobbly_green.svg");
+}
+#howToSteps .stepNumber h3 {
+  position: absolute;
+  z-index: 2;
+}
+#howToSteps li p {
+  padding-right: calc(var(--padding)/2);
+  padding-left: 60px;
+  text-align: left;
+}
+
+#howToGraphic {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#howToImg {
+  height: calc(100% - 15px);
+  width: calc(100% - calc(var(--padding)/2));
+  border-radius: 20px;
+  position: absolute;
+  background: #0099ff80;
+}
+
+@media only screen and (min-width: 600px) {
+  #howToInfo {
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+  }
+}
+
+/* 
+-------------
+CONTACT SECTION
+-------------
+*/
+#contactSection {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 50px;
+}
+
+#contactForm {
+  background: var(--accent3);
+  width: 100%;
+  padding: var(--padding);
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  margin: 50px auto 100px auto;
+}
+
+#senderInfo {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-between;
+}
+
+#fullName, #contactInfo, #senderMessage, #formButtons {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: calc(var(--padding) / 2);
+  justify-content: center;
+  margin: calc(var(--padding)/4) auto;
+}
+
+#senderMessage {
+  flex-direction: column;
+}
+
+label {
+  display: none;
+}
+input, textarea {
+  font-family:Arial, Helvetica, sans-serif;
+  padding: calc(var(--padding)/2) var(--padding);
+  border: none;
+  width: 100%;
+  border-radius: var(--radius);
+}
+input:focus,
+textarea:focus {
+  outline: 5px solid var(--accent5);
+}
+
+#firstName,
+#lastName,
+#email,
+#phoneNumber
+{
+  flex: 1;
+  width: 100%;
+  display: flex;
+  text-align: center;
+}
+
+#subject, #message {
+  width: 100%;
+  margin: 0 0 calc(var(--padding)/2) 0;
+}
+#subjectField {
+  width: 100%;
+}
+#messageField {
+  height: 100px;
+}
+
+.button {
+  padding: var(--padding);
+  border: none;
+}
+.button:hover {
+  cursor: pointer;
+}
+#submitBtn {
+  background: var(--primary1);
+  color: var(--white);
+}
+#submitBtn:hover {
+  background: var(--accent7);
+  outline: 5px solid var(--primary1);
+}
+#submitBtn:focus,
+#resetBtn:focus {
+  outline: 5px solid var(--white);
+}
+#resetBtn {
+  background: var(--accent5);
+  color: var(--white);
+}
+#resetBtn:hover {
+  background: var(--accent3);
+  outline: 5px solid var(--accent5);
+}
+
+@media only screen and (min-width: 600px) {
+  #fullName, #contactInfo, #formButtons {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: calc(var(--padding)/2) auto;
+  }
+
+  #firstName,
+  #lastName,
+  #email,
+  #phoneNumber
+  {
+    width: auto;
+  }
+
+  #firstName, #email, #submitBtn {
+    margin-right: calc(var(--padding)/2);
+  }
+  #lastName, #phoneNumber, #resetBtn {
+    margin-left: calc(var(--padding)/2);
+  }
+}
