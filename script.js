@@ -39,6 +39,7 @@ EDITING BELOW THIS LINE MAY AFFECT CORE FUNCTIONALITY
  * Transition to the main user page after some seconds
  */
 const delay = 5;
+console.log(window.location);
 
 if (window.location.pathname == "/index.html") {
   /**
@@ -55,6 +56,7 @@ if (window.location.pathname == "/index.html") {
   let timer = 0;
 
   setInterval(() => {
+    console.log(timer);
     timer++;
     if (timer === delay) {
       window.location.replace("/Pages/Users.html");
