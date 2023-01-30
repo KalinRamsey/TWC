@@ -62,7 +62,7 @@ if (
     console.log(timer);
     timer++;
     if (timer === delay) {
-      window.location.replace("/Pages/Users.html");
+      window.location.replace("./Pages/users.html");
     }
   }, 1000);
 }
