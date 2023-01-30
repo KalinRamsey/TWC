@@ -32,6 +32,26 @@ EDITING BELOW THIS LINE MAY AFFECT CORE FUNCTIONALITY
 */
 
 /**
+ * MAIN MENU ACCESS
+ * Mobile Main menu modal toggle
+ */
+
+const closeBtn = document.querySelector("#closeMenu");
+const menuBtn = document.querySelector("#hamburgerMenu");
+const menuNav = document.querySelector("#mainMenuModal");
+
+const toggleMenuNav = () => {
+  // Toggles hamburger menu appearance
+  closeBtn.classList.toggle("hidden");
+  menuBtn.classList.toggle("hidden");
+
+  // Toggles main menu on/off
+  menuNav.classList.toggle("hidden");
+};
+menuBtn.addEventListener("click", () => toggleMenuNav());
+closeBtn.addEventListener("click", () => toggleMenuNav());
+
+/**
  * EDIT MAP RENDER
  * Reload interactive map based on selected
  */

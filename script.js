@@ -39,9 +39,12 @@ EDITING BELOW THIS LINE MAY AFFECT CORE FUNCTIONALITY
  * Transition to the main user page after some seconds
  */
 const delay = 5;
-console.log(window.location);
+const originName = "/TWC/";
 
-if (window.location.pathname == "/index.html") {
+if (
+  window.location.pathname == "/index.html" ||
+  window.location.pathname == originName
+) {
   /**
    * LOADING SCREEN QUOTE GENERATOR
    * Loads a random quote at the bottom of loading screen
