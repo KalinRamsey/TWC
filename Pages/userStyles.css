@@ -123,13 +123,13 @@ INFO SECTION
   .infoBlock:nth-child(odd) .infoText p {
     text-align: left;
     padding-right: var(--padding);
-    padding-left: 50px;
+    /* padding-left: 50px; */
   }
   .infoBlock:nth-child(even) .infoText h3,
   .infoBlock:nth-child(even) .infoText p {
     text-align: right;
     padding-left: var(--padding);
-    padding-right: 50px;
+    /* padding-right: 50px; */
   }
 }
 

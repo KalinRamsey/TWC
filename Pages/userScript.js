@@ -216,7 +216,7 @@ featureInfo.map((info, i) => {
   const infoImg = document.createElement("img");
   const infoImgHighlight = document.createElement("div");
 
-  infoHeader.innerHTML = info.title.toUpperCase();
+  infoHeader.innerHTML = info.title;
   infoText.innerHTML = info.text;
   infoImg.setAttribute("src", info.imgSrc);
   infoImg.setAttribute("alt", info.imgAlt);
