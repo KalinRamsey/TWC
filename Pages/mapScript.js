@@ -44,7 +44,6 @@ interactiveMap.setAttribute("src", interactiveMapSource);
 const setMapFilter = (input) => {
   const newSrc = `${interactiveMapSource}/${input}`;
 
-  console.log(newSrc);
   interactiveMap.setAttribute("src", newSrc);
 };
 
