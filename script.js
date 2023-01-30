@@ -95,7 +95,9 @@ if (window.location.pathname == "/index.html") {
     loadingQuotes[Math.floor(Math.random() * loadingQuotes.length)];
 
   footer.append(quoteElement);
+
   let timer = 0;
+
   setInterval(() => {
     console.log(timer);
     timer++;
@@ -104,107 +106,105 @@ if (window.location.pathname == "/index.html") {
     }
   }, 1000);
 } else {
-  console.log(window.location.pathname);
-}
+  /**
+   * MAIN MENU ACCESS
+   * Mobile Main menu modal toggle
+   */
 
-/**
- * MAIN MENU ACCESS
- * Mobile Main menu modal toggle
- */
+  const closeBtn = document.querySelector("#closeMenu");
+  const menuBtn = document.querySelector("#hamburgerMenu");
+  const menuNav = document.querySelector("#mainMenuModal");
 
-const closeBtn = document.querySelector("#closeMenu");
-const menuBtn = document.querySelector("#hamburgerMenu");
-const menuNav = document.querySelector("#mainMenuModal");
+  const toggleMenuNav = () => {
+    // Toggles hamburger menu appearance
+    closeBtn.classList.toggle("hidden");
+    menuBtn.classList.toggle("hidden");
 
-const toggleMenuNav = () => {
-  // Toggles hamburger menu appearance
-  closeBtn.classList.toggle("hidden");
-  menuBtn.classList.toggle("hidden");
+    // Toggles main menu on/off
+    menuNav.classList.toggle("hidden");
+  };
+  menuBtn.addEventListener("click", () => toggleMenuNav());
+  closeBtn.addEventListener("click", () => toggleMenuNav());
 
-  // Toggles main menu on/off
-  menuNav.classList.toggle("hidden");
-};
-menuBtn.addEventListener("click", () => toggleMenuNav());
-closeBtn.addEventListener("click", () => toggleMenuNav());
+  /**
+   * VIDEO REVEAL
+   * Hides video white out and reveals feature video
+   */
+  let currentFeatureIndex = 0;
 
-/**
- * VIDEO REVEAL
- * Hides video white out and reveals feature video
- */
-let currentFeatureIndex = 0;
+  const setImgIndicator = (index) => {
+    // Update selection indicator
+    featureImgData.forEach((f) => {
+      f.active = false;
+    });
+    featureImgData[index].active = true;
+    const featureList = document.querySelector("#selectionIndicators");
+    featureList.innerHTML = "";
 
-const setImgIndicator = (index) => {
-  // Update selection indicator
-  featureImgData.forEach((f) => {
-    f.active = false;
-  });
-  featureImgData[index].active = true;
-  const featureList = document.querySelector("#selectionIndicators");
-  featureList.innerHTML = "";
-
-  for (let f of featureImgData) {
-    featureList.append(buildIndicator(f));
-  }
-  setFeatureImg(index);
-};
-
-const setFeatureImg = (index) => {
-  const currentFeatureImg = document.querySelector("#featureImg");
-  currentFeatureImg.src = featureImgData[index].imgSrc;
-  currentFeatureIndex = index;
-};
-
-const buildIndicator = (img) => {
-  const listItem = document.createElement("li");
-  const div = document.createElement("div");
-
-  listItem.id = img.id;
-  if (img.active) {
-    div.className = "active";
-  } else {
-    div.className = "inactive";
-  }
-
-  div.addEventListener("click", () => {
-    if (!img.active) {
-      setImgIndicator(img.id - 1);
+    for (let f of featureImgData) {
+      featureList.append(buildIndicator(f));
     }
+    setFeatureImg(index);
+  };
+
+  const setFeatureImg = (index) => {
+    const currentFeatureImg = document.querySelector("#featureImg");
+    currentFeatureImg.src = featureImgData[index].imgSrc;
+    currentFeatureIndex = index;
+  };
+
+  const buildIndicator = (img) => {
+    const listItem = document.createElement("li");
+    const div = document.createElement("div");
+
+    listItem.id = img.id;
+    if (img.active) {
+      div.className = "active";
+    } else {
+      div.className = "inactive";
+    }
+
+    div.addEventListener("click", () => {
+      if (!img.active) {
+        setImgIndicator(img.id - 1);
+      }
+    });
+
+    listItem.append(div);
+
+    return listItem;
+  };
+
+  const prevFeatureImgBtn = document.querySelector("#selectPrev");
+  const nextFeatureImgBtn = document.querySelector("#selectNext");
+
+  const updateFeatureImgs = (index) => {
+    setImgIndicator(index);
+    setFeatureImg(index);
+  };
+
+  // Populate initial feature image section
+  updateFeatureImgs(currentFeatureIndex);
+
+  prevFeatureImgBtn.addEventListener("click", () => {
+    // Update feature imgs to display previous img
+    if (currentFeatureIndex === 0) {
+      currentFeatureIndex = featureImgData.length - 1;
+    } else {
+      currentFeatureIndex--;
+    }
+
+    updateFeatureImgs(currentFeatureIndex);
   });
 
-  listItem.append(div);
+  nextFeatureImgBtn.addEventListener("click", () => {
+    // Update feature imgs to display next img
+    if (currentFeatureIndex === featureImgData.length - 1) {
+      currentFeatureIndex = 0;
+    } else {
+      currentFeatureIndex++;
+    }
 
-  return listItem;
-};
-
-const prevFeatureImgBtn = document.querySelector("#selectPrev");
-const nextFeatureImgBtn = document.querySelector("#selectNext");
-
-const updateFeatureImgs = (index) => {
-  setImgIndicator(index);
-  setFeatureImg(index);
-};
-
-// Populate initial feature image section
-updateFeatureImgs(currentFeatureIndex);
-
-prevFeatureImgBtn.addEventListener("click", () => {
-  // Update feature imgs to display previous img
-  if (currentFeatureIndex === 0) {
-    currentFeatureIndex = featureImgData.length - 1;
-  } else {
-    currentFeatureIndex--;
-  }
-
-  updateFeatureImgs(currentFeatureIndex);
-});
-
-nextFeatureImgBtn.addEventListener("click", () => {
-  // Update feature imgs to display next img
-  if (currentFeatureIndex === featureImgData.length - 1) {
-    currentFeatureIndex = 0;
-  } else {
-    currentFeatureIndex++;
-  }
-
-  updateFeatureImgs(currentFeatureIndex);
-});
+    updateFeatureImgs(currentFeatureIndex);
+  });
+}
