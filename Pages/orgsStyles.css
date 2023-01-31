@@ -8,9 +8,9 @@ body {
 }
 
 #orgsView {
-  margin: 0px auto -80px auto;
+  margin: -80px auto;
 }
-#orgsView h3 {
+#orgsView h2 {
   color: var(--primary1);
 }
 
@@ -132,7 +132,7 @@ HOW TO SECTION
 #howToSteps #howTo3 .stepNumber {
   background-image: url("../Assets/circle_wobbly_green.svg");
 }
-#howToSteps .stepNumber h3 {
+#howToSteps .stepNumber h2 {
   position: absolute;
   z-index: 2;
 }

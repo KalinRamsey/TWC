@@ -10,7 +10,7 @@ body {
 #mapView {
   margin: 0px auto -80px auto;
 }
-#mapView h3 {
+#mapView h2 {
   color: var(--primary1);
 }
 

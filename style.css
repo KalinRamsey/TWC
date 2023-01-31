@@ -3,6 +3,11 @@
   src: url("./Assets/Fonts/Ludicrous.ttf")
 }
 
+@font-face {
+  font-family: "Rescue";
+  src: url("/Assets/Fonts/Rescue.ttf");
+}
+
 :root {
   --primary1: #2E2D7B;
   --primary2: #BC1F74;
@@ -24,6 +29,7 @@
 }
 
 * {
+  font-family: "Rescue", Arial, Helvetica, sans-serif;
   margin: 0 auto;
   text-align: center;
   box-sizing: border-box;
@@ -40,15 +46,21 @@ body {
     flex-direction: row;
   }
 }
-
-h3 {
-  font-family: "Ludicrous";
+h1 {
+  font-family: "Rescue", Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  color: var(--white);
+  font-size: 1.5em;
+}
+h2 {
+  font-family: "Ludicrous", Arial, Helvetica, sans-serif;
   color: var(--accent8);
-  /* text-transform: uppercase; */
+  line-height: 2em;
   font-size: 2.5em;
 }
 
 p {
+  line-height: 2em;
   color: var(--white);
 }
 
@@ -88,6 +100,7 @@ LOADING SCREEN
   transform: rotate(-10deg);
   padding: 50px 0;
   color: var(--white);
+  font-size: 3em;
   text-transform: uppercase;
 }
 
@@ -109,6 +122,7 @@ LOADING SCREEN
 }
 
 #loadingQuote {
+  font-size: 1.25em;
   position: absolute;
   display: flex;
   align-items: center;
@@ -192,6 +206,8 @@ SIDEBAR NAV
   }
 
   .sideBarButton {
+    font-size: 1.25em;
+    text-transform: uppercase;
     width: 100%;
     max-width: 200px;
     height: 50px;
@@ -331,7 +347,7 @@ NAV LOGO
 #navLogo {
   transform: rotate(-10deg);
 }
-#navLogo p {
+#navLogo h1 {
   text-transform: uppercase;
 }
 #logoLarge {
@@ -424,7 +440,7 @@ MAIN MENU
   border-radius: 20px;
 }
 
-#mainMenu h3 {
+#mainMenu h2 {
   color: var(--primary1);
 }
 #mainMenuSpacer {
@@ -436,6 +452,8 @@ MAIN MENU
 }
 
 #mainMenuOptions button {
+  font-size: 1.25em;
+  text-transform: uppercase;
   width: 100%;
   max-width: 200px;
   height: 50px;
@@ -494,6 +512,7 @@ FEATURE IMAGE SECTION
 }
 #featureImg {
   width: 100%;
+  padding-top: 70px;
 }
 
 #featureSelector {
@@ -541,6 +560,10 @@ FEATURE IMAGE SECTION
 }
 
 @media only screen and (min-width: 768px) {
+  #featureImg {
+    width: 100%;
+    padding-top: 0;
+  }
   #selectPrev, #selectNext {
     width: 30%;
   }
@@ -564,7 +587,7 @@ FOOTER
   position: absolute;
   width: 100%;
   z-index: 5;
-  top: -50px;
+  top: -10px;
 }
 
 #footerTopWaveColor, #footerTopWave, #footerTopWaveBrush {

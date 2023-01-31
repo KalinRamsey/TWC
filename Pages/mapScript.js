@@ -13,8 +13,20 @@
 	templates provided to ensure consistency.
 
 */
-const interactiveMapSource = "https://tailwindcss.com/docs";
-const mapFilterOptions = ["margin", "padding", "width", "height", "opacity"];
+const interactiveMapSource =
+  "https://www.transwomenconnected.org/mapfile.php?search=";
+const mapFilterOptions = [
+  "All",
+  "Hotline",
+  "SchoolWork",
+  "LivingSituation",
+  "Legal",
+  "GenderAffirmation",
+  "Community",
+  "HIVSTI",
+  "MentalHealth",
+  "PhysicalHealth",
+];
 
 /*
 ///////////////////////////////////////////////////////////////////////////////////
@@ -62,7 +74,7 @@ const interactiveMap = document.querySelector("#interactiveFrame");
 interactiveMap.setAttribute("src", interactiveMapSource);
 
 const setMapFilter = (input) => {
-  const newSrc = `${interactiveMapSource}/${input}`;
+  const newSrc = `${interactiveMapSource}${input}`;
 
   interactiveMap.setAttribute("src", newSrc);
 };

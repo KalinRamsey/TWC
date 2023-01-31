@@ -16,7 +16,7 @@ body {
 }
 
 #usersView {
-  margin: 0px auto -80px auto;
+  margin: -80px auto;
 }
 
 @media only screen and (min-width: 600px) {
@@ -64,32 +64,37 @@ INFO SECTION
   color: white;
 }
 
-.infoImg {
+.infoImgBlock {
   flex: 1;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.infoImg:hover {
+.infoImgBlock:hover {
   cursor: pointer;
 }
 
-.infoImg div {
+.infoImgBlock .imgHighlight {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
 }
 
-.infoImg img {
+.infoImg {
   position: absolute;
-  width: 55%;
-  background: var(--accent3);
+  top: calc(50% - 30%);
+  left: calc(50% - 30%);
+  width: 60%;
+  height: 60%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   border-radius: 500px;
   z-index: 1;
 }
-.infoImg img:hover {
+.infoImg:hover {
   outline: 5px solid var(--white);
 }
 
@@ -119,13 +124,13 @@ INFO SECTION
     flex-direction: row-reverse;
   }
   
-  .infoBlock:nth-child(odd) .infoText h3,
+  .infoBlock:nth-child(odd) .infoText h2,
   .infoBlock:nth-child(odd) .infoText p {
     text-align: left;
     padding-right: var(--padding);
     /* padding-left: 50px; */
   }
-  .infoBlock:nth-child(even) .infoText h3,
+  .infoBlock:nth-child(even) .infoText h2,
   .infoBlock:nth-child(even) .infoText p {
     text-align: right;
     padding-left: var(--padding);
@@ -140,10 +145,9 @@ VIDEO SECTION
 */
 #videoFeature {
   width: 100%;
-  height: 250px;
-  max-width: 450px;
+  height: 450px;
+  max-width: calc(100% - 50px);
   border-radius: var(--radius);
-  border: 2px solid white;
   display: flex;
   position: relative;
   flex-direction: column;
@@ -172,6 +176,7 @@ VIDEO SECTION
   width: 100%;
   height: 100%;
   border-radius: 5px;
+  /* border: 2px solid white; */
 }
 
 #videoInfo {
@@ -182,7 +187,7 @@ VIDEO SECTION
 
 
 #videoInfo li {
-  padding: calc(var(--padding)/ 2) var(--padding);
+  padding: calc(var(--padding)) 0;
 }
 
 #videoInfo li p::before {
@@ -222,8 +227,7 @@ MAP SECTION
   z-index: 1;
 }
 #mapGraphic .imgHighlight {
-  width: fit-content;
-  height: fit-content;
+  width: 350px;
   position: absolute;
 }
 

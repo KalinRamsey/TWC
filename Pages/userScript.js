@@ -17,69 +17,45 @@ const featureImgData = [
   {
     id: 1,
     active: true,
-    imgSrc: "https://via.placeholder.com/1920x1080?text=Sample+Image+1",
-    alt: "Alt Text",
+    imgSrc: "../Assets/FeaturePhotos/Feature1.jpg",
+    alt: "Image featuring 3 trans women dancing happily",
   },
   {
     id: 2,
     active: false,
-    imgSrc: "https://via.placeholder.com/1920x1080?text=Sample+Image+2",
-    alt: "Alt Text",
+    imgSrc: "../Assets/FeaturePhotos/Feature2.jpg",
+    alt: "Image featuring a trans woman smiling at the viewer",
   },
   {
     id: 3,
     active: false,
-    imgSrc: "https://via.placeholder.com/1920x1080?text=Sample+Image+3",
-    alt: "Alt Text",
-  },
-  {
-    id: 4,
-    active: false,
-    imgSrc: "https://via.placeholder.com/1920x1080?text=Sample+Image+4",
-    alt: "Alt Text",
-  },
-  {
-    id: 5,
-    active: false,
-    imgSrc: "https://via.placeholder.com/1920x1080?text=Sample+Image+5",
-    alt: "Alt Text",
-  },
-  {
-    id: 6,
-    active: false,
-    imgSrc: "https://via.placeholder.com/1920x1080?text=Sample+Image+6",
-    alt: "Alt Text",
-  },
-  {
-    id: 7,
-    active: false,
-    imgSrc: "https://via.placeholder.com/1920x1080?text=Sample+Image+7",
-    alt: "Alt Text",
+    imgSrc: "../Assets/FeaturePhotos/Feature3.jpg",
+    alt: "Image featuring trans woman smiling at something on her phone",
   },
 ];
 const featureInfo = [
   {
     title: "Who?",
     text: "For self-identified trans women who are sexually active, between ages 18–49, and living in the US.",
-    imgSrc: "../Assets/peppermint-lede.jpg",
+    imgSrc: "../Assets/ModelPhotos/Model1.jpg",
     imgAlt: "Image alt text here",
   },
   {
     title: "Why?",
     text: "Help researchers learn more about the health needs of trans women.",
-    imgSrc: "../Assets/peppermint-lede.jpg",
+    imgSrc: "../Assets/ModelPhotos/Model2.jpg",
     imgAlt: "Image alt text here",
   },
   {
     title: "Where? When?",
     text: "Test a trans women's health-related app on your mobile device with internet accss at your own pace. Fill out 4 surveys over 6 months.",
-    imgSrc: "../Assets/peppermint-lede.jpg",
+    imgSrc: "../Assets/ModelPhotos/Model5.png",
     imgAlt: "Image alt text here",
   },
   {
     title: "How?",
     text: "Thank you for your interest in TWC! The study is now closed because we have met our enrollment goal. If you'd like to learn about future studies or see the TWC app when this study is over, please <a href='./orgs.html#contactForm'>contact us.</a>",
-    imgSrc: "../Assets/peppermint-lede.jpg",
+    imgSrc: "../Assets/ModelPhotos/Model4.jpg",
     imgAlt: "Image alt text here",
   },
 ];
@@ -130,6 +106,7 @@ const setImgIndicator = (index) => {
     f.active = false;
   });
   featureImgData[index].active = true;
+
   const featureList = document.querySelector("#selectionIndicators");
   featureList.innerHTML = "";
 
@@ -178,6 +155,15 @@ const updateFeatureImgs = (index) => {
 // Populate initial feature image section
 updateFeatureImgs(currentFeatureIndex);
 
+setInterval(() => {
+  updateFeatureImgs(currentFeatureIndex);
+  if (currentFeatureIndex === featureImgData.length - 1) {
+    currentFeatureIndex = 0;
+  } else {
+    currentFeatureIndex++;
+  }
+}, 5000);
+
 prevFeatureImgBtn.addEventListener("click", () => {
   // Update feature imgs to display previous img
   if (currentFeatureIndex === 0) {
@@ -209,22 +195,23 @@ const infoList = document.querySelector("#infoList");
 featureInfo.map((info, i) => {
   const item = document.createElement("li");
   const infoTextSegment = document.createElement("div");
-  const infoHeader = document.createElement("h3");
+  const infoHeader = document.createElement("h2");
   const infoText = document.createElement("p");
   const infoImgSegment = document.createElement("div");
   const infoImgContainer = document.createElement("div");
-  const infoImg = document.createElement("img");
+  const infoImg = document.createElement("div");
   const infoImgHighlight = document.createElement("div");
 
   infoHeader.innerHTML = info.title;
   infoText.innerHTML = info.text;
-  infoImg.setAttribute("src", info.imgSrc);
+  infoImg.style.backgroundImage = `url(${info.imgSrc})`;
   infoImg.setAttribute("alt", info.imgAlt);
   item.setAttribute("key", i);
 
   infoTextSegment.classList.add("infoText");
   infoImgHighlight.classList.add("imgHighlight");
-  infoImgSegment.classList.add("infoImg");
+  infoImgSegment.classList.add("infoImgBlock");
+  infoImg.classList.add("infoImg");
   item.classList.add("infoBlock");
 
   infoImgContainer.append(infoImg);
@@ -246,11 +233,13 @@ featureInfo.map((info, i) => {
  */
 const videoBtn = document.querySelector("#playButton");
 const videoCover = document.querySelector("#videoCover");
+const video = document.querySelector("#sourceVideo");
 
 const toggleVideoCover = () => {
   // Toggles hamburger menu appearance
   videoBtn.classList.toggle("hidden");
   // Toggles main menu on/off
   videoCover.classList.toggle("hidden");
+  video.play();
 };
 videoBtn.addEventListener("click", () => toggleVideoCover());

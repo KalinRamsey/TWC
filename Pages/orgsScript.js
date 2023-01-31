@@ -17,44 +17,20 @@ const featureImgData = [
   {
     id: 1,
     active: true,
-    imgSrc: "https://via.placeholder.com/1920x1080?text=Sample+Image+1",
-    alt: "Alt Text",
+    imgSrc: "../Assets/FeaturePhotos/Feature1.jpg",
+    alt: "Image featuring 3 trans women dancing happily",
   },
   {
     id: 2,
     active: false,
-    imgSrc: "https://via.placeholder.com/1920x1080?text=Sample+Image+2",
-    alt: "Alt Text",
+    imgSrc: "../Assets/FeaturePhotos/Feature2.jpg",
+    alt: "Image featuring a trans woman smiling at the viewer",
   },
   {
     id: 3,
     active: false,
-    imgSrc: "https://via.placeholder.com/1920x1080?text=Sample+Image+3",
-    alt: "Alt Text",
-  },
-  {
-    id: 4,
-    active: false,
-    imgSrc: "https://via.placeholder.com/1920x1080?text=Sample+Image+4",
-    alt: "Alt Text",
-  },
-  {
-    id: 5,
-    active: false,
-    imgSrc: "https://via.placeholder.com/1920x1080?text=Sample+Image+5",
-    alt: "Alt Text",
-  },
-  {
-    id: 6,
-    active: false,
-    imgSrc: "https://via.placeholder.com/1920x1080?text=Sample+Image+6",
-    alt: "Alt Text",
-  },
-  {
-    id: 7,
-    active: false,
-    imgSrc: "https://via.placeholder.com/1920x1080?text=Sample+Image+7",
-    alt: "Alt Text",
+    imgSrc: "../Assets/FeaturePhotos/Feature3.jpg",
+    alt: "Image featuring trans woman smiling at something on her phone",
   },
 ];
 
@@ -152,6 +128,15 @@ const updateFeatureImgs = (index) => {
 
 // Populate initial feature image section
 updateFeatureImgs(currentFeatureIndex);
+
+setInterval(() => {
+  updateFeatureImgs(currentFeatureIndex);
+  if (currentFeatureIndex === featureImgData.length - 1) {
+    currentFeatureIndex = 0;
+  } else {
+    currentFeatureIndex++;
+  }
+}, 5000);
 
 prevFeatureImgBtn.addEventListener("click", () => {
   // Update feature imgs to display previous img
