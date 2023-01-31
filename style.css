@@ -5,7 +5,7 @@
 
 @font-face {
   font-family: "Rescue";
-  src: url("/Assets/Fonts/Rescue.ttf");
+  src: url("./Assets/Fonts/Rescue.ttf");
 }
 
 :root {
@@ -29,7 +29,7 @@
 }
 
 * {
-  font-family: "Rescue", Arial, Helvetica, sans-serif;
+  font-family: "Rescue";
   margin: 0 auto;
   text-align: center;
   box-sizing: border-box;
@@ -47,7 +47,7 @@ body {
   }
 }
 h1 {
-  font-family: "Rescue", Arial, Helvetica, sans-serif;
+  font-family: "Rescue" !important;
   text-transform: uppercase;
   color: var(--white);
   font-size: 1.5em;
